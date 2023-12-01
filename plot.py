@@ -118,7 +118,7 @@ def sky_1day(date, site=site, zone=CHILE, focalplane=False, Az=0, El=90, Bs=0, r
         if r == 0:
             target = np.load("./data/Gantry.npy")
         else:
-            target = st.Gantry(r=r, mode='optics').angles
+            target = st.Gantry(r=r, mode='optics').points
         num, text1, text2, color_g = cont.state(Az, El, target)
         legend_elements.append(ml.lines.Line2D([0], [0], marker='None', linestyle='None', label="Gantry: " + text2))
         
@@ -202,7 +202,7 @@ def plot_sky(datetime, site=site, zone=CHILE, focalplane=False, Az=0, El=90, Bs=
         if r == 0:
             target = np.load("./data/Gantry.npy")
         else:
-            target = st.Gantry(r=r, mode='optics').angles
+            target = st.Gantry(r=r, mode='optics').points
         num, text1, text2, color_g = cont.state(Az, El, target)
         legend_elements.append(ml.lines.Line2D([0], [0], marker='None', linestyle='None', label="Gantry: " + text2))
         
